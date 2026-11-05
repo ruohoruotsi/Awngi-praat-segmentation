@@ -1,0 +1,9 @@
+runez
+torchcodec
+silero-vad
+praat-textgrids
+soundfile
+scipy
+numpy
+# dev
+pytest
