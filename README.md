@@ -1,4 +1,4 @@
-# Awngi stop-consonant research
+# Awngi Stop-Consonant Research
 
 Long-form speech recordings → automatically segmented utterances with
 **Praat-ready TextGrids**, manual linguistic annotation, and automated acoustic
@@ -22,8 +22,8 @@ flowchart LR
 Requirements: Python 3.10+, [ffmpeg] on PATH, macOS/Linux.
 
 ```bash
-python3.10 -m venv silero_venv
-source silero_venv/bin/activate
+python3.10 -m venv segmentation_venv
+source segmentation_venv/bin/activate
 pip install -r requirements.txt
 
 # 1) segment a recording (VAD -> clips + Praat grids + manifest)
