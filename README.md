@@ -1,5 +1,8 @@
 # Awngi Stop-Consonant Research
 
+After discussing with M. we need to find a way to localize all burst & VOT (pre vowel) regions.
+Not explicit utterance based segmentation is required, just Praat TextGrids with these features accurately identified
+
 Long-form speech recordings → automatically segmented utterances with
 **Praat-ready TextGrids**, manual linguistic annotation, and automated acoustic
 measurement (VOT, closure duration, burst estimate, spectral moments, cepstral
