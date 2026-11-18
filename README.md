@@ -36,7 +36,6 @@ pipeline/                  the pipeline package (CLI: python -m pipeline …)
 examples/                  worked example grid + sample measures.csv
 tests/                     pytest suite (round-trips on the REAL data)
 out/                       generated output (gitignored)
-silero_segment.py          original baseline script (kept for reference)
 ```
 
 ## Tests
@@ -45,8 +44,7 @@ silero_segment.py          original baseline script (kept for reference)
 python -m pytest tests/ -q
 ```
 
-The suite validates the pipeline on the real recordings in `audio/` &rarr;
-segmentation determinism, TextGrid integrity, Praat-format round-trips
+The suite validates the analysis and output of TextGrids 
 
 ## Notes
 
@@ -55,6 +53,5 @@ segmentation determinism, TextGrid integrity, Praat-format round-trips
 - TextGrids are written in Praat long-text format (UTF-8); the tools read back
   every Praat flavour, including the UTF-16 files Praat itself saves on macOS.
 - `praat-textgrids` is GPLv3 — fine for internal research use.
-- `silero_segment.py` predates this pipeline and is kept as a baseline reference.
 
 [ffmpeg]: https://ffmpeg.org/  (e.g. `brew install ffmpeg`)
