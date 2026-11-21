@@ -24,16 +24,14 @@ python -m pipeline segment audio/1203_spm37_intervocalic.WAV
 ## Repository layout
 
 ```
-AGENTS.md                  project status & context for AI-assisted sessions
-audio/                     real recordings + the student's original TextGrids
-pipeline/                  the pipeline package (CLI: python -m pipeline …)
-  vad.py                   Silero VAD, sample-precision timestamps, pad+merge
-  segments.py              ffmpeg clip cutting + naming
-  textgrid.py              Praat TextGrid generation / rebase (praat-textgrids)
-  manifest.py              JSON bookkeeping + provenance + id-stability guard
-  validate.py              annotation consistency lint
-  measure/                 measurement engine (tiers -> CSV, DSP features)
-examples/                  worked example grid + sample measures.csv
+AGENTS.md             project status & context for AI-assisted sessions
+audio/                real recordings + the original TextGrids
+docs/                 Tutorial, extra documentation, linguistics context or Praat help 
+src/                  the main source code
+  textgrid.py              Praat TextGrid generation, using praat-textgrids
+  features.py              compute a few Audio DSP features
+  measure_grid.py          Extract per-stop acoustic measures from an annotated master TextGrid.
+  validate.py              annotation consistency check
 tests/                     pytest suite (round-trips on the REAL data)
 out/                       generated output (gitignored)
 ```
