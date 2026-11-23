@@ -16,7 +16,7 @@ source segmentation_venv/bin/activate
 pip install -r requirements.txt
 
 # 1) segment a recording (VAD -> clips + Praat grids + manifest)
-python -m pipeline segment audio/1203_spm37_intervocalic.WAV
+python -m src/auto_annotate.py audio/1203_spm37_intervocalic.WAV
 ```
 
 
@@ -24,16 +24,15 @@ python -m pipeline segment audio/1203_spm37_intervocalic.WAV
 ## Repository layout
 
 ```
-AGENTS.md             project status & context for AI-assisted sessions
-audio/                real recordings + the original TextGrids
+audio/                Real recordings + the original TextGrids
 docs/                 Tutorial, extra documentation, linguistics context or Praat help 
-src/                  the main source code
-  textgrid.py              Praat TextGrid generation, using praat-textgrids
-  features.py              compute a few Audio DSP features
-  measure_grid.py          Extract per-stop acoustic measures from an annotated master TextGrid.
-  validate.py              annotation consistency check
-tests/                     pytest suite (round-trips on the REAL data)
-out/                       generated output (gitignored)
+src/                  Main source code
+  textgrid.py         Praat TextGrid generation, using praat-textgrids
+  features.py         Compute a few Audio DSP features
+  measure_grid.py     Extract per-stop acoustic measures from an annotated master TextGrid.
+  validate.py         Annotation consistency check
+tests/                pytest suite (round-trips on the REAL data)
+out/                  Generated output TextGrids (gitignored)
 ```
 
 ## Tests
