@@ -5,8 +5,8 @@ import pytest
 import soundfile as sf
 import textgrids
 
-from pipeline.measure.extract import measure_grid
-from pipeline.textgrid import _interval_tier
+from src.measure_grid import measure_grid
+from src.textgrid import _interval_tier
 
 
 def make_wav(path, sr=44100, seconds=2.0):

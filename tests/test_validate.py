@@ -2,8 +2,8 @@
 
 import textgrids
 
-from pipeline.textgrid import _interval_tier
-from pipeline.validate import validate_grid
+from src.textgrid import _interval_tier
+from src.validate import validate_grid
 
 
 def make_grid(sound_spans, event_spans, word_spans=None):

@@ -24,7 +24,7 @@ def _label_at(tier, t):
 
 def measure_grid(grid, audio, sr, window_s=0.04, cep_n=12):
     """Yield one measurement dict per labelled stop in the grid."""
-    from ..textgrid import assign_markers
+    from .textgrid import assign_markers
 
     sound = [iv for iv in grid["Sound"] if str(iv.text).strip()]
     per_stop, _, _ = assign_markers(grid)

@@ -15,8 +15,8 @@ python3.10 -m venv segmentation_venv
 source segmentation_venv/bin/activate
 pip install -r requirements.txt
 
-# 1) segment a recording (VAD -> clips + Praat grids + manifest)
-python -m src/auto_annotate.py audio/1203_spm37_intervocalic.WAV
+# 1) burst detection -> candidates CSV + proposal TextGrid
+python -m src.detect_bursts audio/1203_spm37_intervocalic.WAV --out out/
 ```
 
 
@@ -27,6 +27,7 @@ python -m src/auto_annotate.py audio/1203_spm37_intervocalic.WAV
 audio/                Real recordings + the original TextGrids
 docs/                 Tutorial, extra documentation, linguistics context or Praat help 
 src/                  Main source code
+  detect_bursts.py    Burst detector (spectral flux, adaptive threshold)
   textgrid.py         Praat TextGrid generation, using praat-textgrids
   features.py         Compute a few Audio DSP features
   measure_grid.py     Extract per-stop acoustic measures from an annotated master TextGrid.
